@@ -13,7 +13,8 @@ def maskApplication(lower, upper, image):
     mask = cv2.inRange(image, lower, upper)
     return cv2.bitwise_and(image, image, mask=mask)    
 
-#returns a blurred version of the image using the kernel that the user assigns
+#returns a blurred version of the image using the kernel 
+#that the user assigns
 def Gauss_Blur(image, GaussianKernel):
     
     return (cv2.GaussianBlur(image,GaussianKernel,0))
@@ -21,7 +22,8 @@ def Gauss_Blur(image, GaussianKernel):
 #Image Declaration
 img = cv2.imread('placa_2.jpg')
 
-#Image resize to fit an standard (only for huge images to fit into the screen)
+#Image resize to fit an standard (only for huge images 
+#to fit into the screen)
 #img = cv2.resize(img, (894, 451)) 
 
 #Change the color palette to gray scale
@@ -51,7 +53,8 @@ edge = cv2.Canny(resultado, t_lower, t_upper, L2gradient = True)
 resultado = Gauss_Blur(resultado,(9,9))
 
 #Using pytesseract to recognize the text in the image
-text = pytesseract.image_to_string(resultado, config='--psm 4 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+text = pytesseract.image_to_string(resultado, 
+    config='--psm 4 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
 
 #Printing the detected text
 print("Texto:", text.strip())
