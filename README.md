@@ -28,7 +28,7 @@ Make sure you have [Python 3](https://www.python.org/downloads/) installed.
 After installation, you can run the script with:
 
 ```bash
-python main.py
+python detector.py
 ```
 
 Make sure the Tesseract executable is correctly set in your code, for example:
@@ -42,9 +42,5 @@ or simply use `tesseract` if it's available in your system path (Linux/macOS).
 ## Notes
 
 - This tool is optimized for Jalisco-style license plates.
-- Image quality and lighting affect detection performance.
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
+- Image quality, size and lighting affect detection performance.
 
