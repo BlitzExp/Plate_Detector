@@ -9,11 +9,13 @@ import pytesseract
 #Return an image with an applied mask using the lower and upper values
 #along with the original image
 def maskApplication(lower, upper, image):
+    
     mask = cv2.inRange(image, lower, upper)
     return cv2.bitwise_and(image, image, mask=mask)    
 
 #returns a blurred version of the image using the kernel that the user assigns
 def Gauss_Blur(image, GaussianKernel):
+    
     return (cv2.GaussianBlur(image,GaussianKernel,0))
 
 #Image Declaration
